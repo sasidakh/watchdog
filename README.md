@@ -20,6 +20,9 @@ interface PingService {
 })
 export class SampleObserver {
     state: number = 0;
+    
+    //this ObserverId must be unique for each instance.
+    //it will be used to resolve the Observer.
     get ObserverId(): string {
         return "sample";
     }
