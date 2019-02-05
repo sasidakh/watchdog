@@ -6,9 +6,9 @@ describe("@Observer", () => {
         let observer = new SampleObserver();
         let initial = observer.state;
 
-        Static.subject.goOnline();
+        Static.serviceStatus.goOnline();
         let result = observer.state;
-        Static.subject.goOffline();
+        Static.serviceStatus.goOffline();
 
         expect(initial).to.be.equal(0);
         expect(result).to.be.equal(999);
