@@ -8,8 +8,9 @@ export class SampleObserver {
     get ObserverId(): string {
         return "sample";
     }
-    updateState() {
+    async updateState() {
         this.state = 999;
+        return true;
     }
     constructor() {
     }

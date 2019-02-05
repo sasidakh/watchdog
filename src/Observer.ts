@@ -5,7 +5,7 @@ import {Subject} from "./Subject";
 
 export interface Observer {
     ObserverId: string;
-    updateState(...args: any[]): void;
+    updateState: () => Promise<boolean>;
 }
 
 export interface ObserveConfig {
