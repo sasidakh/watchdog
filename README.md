@@ -48,8 +48,9 @@ export class SampleObserver {
         return "sample";
     }
     //this function will be called when state of the system changes.
-    updateState() {
+    async updateState() {
         this.state = 999;
+        return true
     }
     constructor() {
     }
