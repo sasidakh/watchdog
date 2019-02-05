@@ -1,8 +1,8 @@
+
 export interface PingService {
     ping: () => Promise<boolean>;
 }
-
-export class DefaultPingService implements PingService {
+class DefaultPingService implements PingService {
     async ping() {
         return new Promise<boolean>((resolve) => {
             fetch(
@@ -28,3 +28,4 @@ export class DefaultPingService implements PingService {
         });
     }
 }
+export var defaultPingService = new DefaultPingService();

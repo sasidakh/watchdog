@@ -8,10 +8,11 @@ export enum StateType {
 }
 
 export class ServiceStatus {
+    static instance: ServiceStatus;
+    static ping: PingService;
     private interval: any;
     private state: StateType;
     observers: Map<string, Observer> = new Map<string, any>();
-    ping: PingService;
 
     attach(observer: Observer) {
         this.observers.set(observer.ObserverId, observer);
@@ -44,8 +45,8 @@ export class ServiceStatus {
     }
 
     private async callback() {
-        if (!this.ping) return;
-        if (await this.ping.ping()) return this.goOnline();
+        if (!ServiceStatus.ping) return;
+        if (await ServiceStatus.ping.ping()) return this.goOnline();
         else return this.goOffline();
     }
 

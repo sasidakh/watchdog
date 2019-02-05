@@ -1,8 +1,5 @@
 import {Observe} from "../../src/Observer";
-// import {DefaultPingService} from "../../src/PingService";
-@Observe({
-    period: 1000
-})
+@Observe()
 export class SampleObserver {
     state: number = 0;
     get ObserverId(): string {
