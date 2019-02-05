@@ -40,7 +40,7 @@ export class SampleObserver {
 ```ts
 @Observe({
     period: 1000,
-    ping: PingService
+    ping: new PingService()
 })
 export class SampleObserver {
     state: number = 0;
